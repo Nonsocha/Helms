@@ -53,9 +53,9 @@
        ```    
  8. ### Clean Up
 
-        ```
+        
            rm helm.tar.gz && rm -r *-amd64
-         ```
+         
             
       
 ### For Windows:
