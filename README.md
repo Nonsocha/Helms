@@ -18,23 +18,23 @@
    
      * For linux use **curl** to download helm
 
-      
+       ```
        curl -L https://get.helm.sh/helm-v3.5.0-linux-amd64.tar.gz -o helm.tar.gz
-       
+       ```
 
-      - For macOS use **curl** to download Helm :
+      *  For macOS use **curl** to download Helm :
 
           ```
              curl -L https://get.helm.sh/helm-v3.5.0-darwin-amd64.tar.gz -o helm.tar.gz
            ``` 
 
-4.  **Extract The Downloaded File**
+4.  ### Extract The Downloaded File
 
      ```
          tar -zxvf helm.tar.gz
       ```
 
-5.  **Move the Helm Binary**
+5.  ### Move the Helm Binary
           * For linux
 
             ```
@@ -45,19 +45,19 @@
               ```
                  mv darwin-amd64/helm /usr/local/bin/helm
               ```
-  6. **Verify installation**
+  6. ### Verify installation
 
         ```
         helm version
        ```    
- 7. **Clean Up**
+ 7. ### Clean Up
 
         ```
            rm helm.tar.gz && rm -r *-amd64
          ```
             
       
-## For Windows:
+### For Windows:
   1. **Open Vscode**
        * Run vscode as administrator
        *Access Cli by opening the terminal
