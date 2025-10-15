@@ -35,19 +35,19 @@
       ```
 
 5.  ### Move the Helm Binary
-          * For linux
+          * For **linux**
 
            
                       ```
                         mv linux-amd64/helm /usr/local/bin/helm 
-                      ```
+                      
     
-           * For macOS:
+           * For **macOS**:
 
            
-                       ```
+                       
                           mv darwin-amd64/helm /usr/local/bin/helm
-                       ```
+                       
            
   7. ### Verify installation
 
