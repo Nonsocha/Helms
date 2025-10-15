@@ -12,7 +12,7 @@
    * Run Vscode as an administrator
    * Access CLI by opening the terminal
      
-  ![first](./image/capture 1/PENG)
+        ![first](./image/capture 1/PENG)
   
 2. ### Download Helm
    
@@ -37,20 +37,21 @@
 5.  ### Move the Helm Binary
           * For linux
 
-            ```
-                mv linux-amd64/helm /usr/local/bin/helm
-             ```
+           ```
+            mv linux-amd64/helm /usr/local/bin/helm
+           ```
+    
            * For macOS:
 
-              ```
-                 mv darwin-amd64/helm /usr/local/bin/helm
-              ```
-  6. ### Verify installation
+           ```
+              mv darwin-amd64/helm /usr/local/bin/helm
+           ```
+  7. ### Verify installation
 
         ```
         helm version
        ```    
- 7. ### Clean Up
+ 8. ### Clean Up
 
         ```
            rm helm.tar.gz && rm -r *-amd64
