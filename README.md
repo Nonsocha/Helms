@@ -18,9 +18,9 @@
    
      * For linux use **curl** to download helm
 
-       
-       curl -L https://get.helm.sh/helm-v3.5.0-linux-amd64.tar.gz -o helm.tar.gz
-       
+       ```
+         curl -L https://get.helm.sh/helm-v3.5.0-linux-amd64.tar.gz -o helm.tar.gz
+       ```
 
       *  For macOS use **curl** to download Helm :
 
@@ -37,15 +37,15 @@
 5.  ### Move the Helm Binary
           * For linux
 
-           ```
+           
             mv linux-amd64/helm /usr/local/bin/helm
-           ```
+           
     
            * For macOS:
 
-           ```
+           
               mv darwin-amd64/helm /usr/local/bin/helm
-           ```
+           
   7. ### Verify installation
 
         ```
