@@ -11,19 +11,21 @@
 1. **Open your vscode**
    * Run Vscode as an administrator
    * Access CLI by opening the terminal
+     
   ![first](./image/capture 1/PENG)
-2. **Download Helm**
+2. ### Download Helm
      * For linux use **curl** to download helm
 
-       ```
-       curl -L https://get.helm.sh/helm-v3.5.0-linux-amd64.tar.gz -o helm.tar.gz
       ```
+       curl -L https://get.helm.sh/helm-v3.5.0-linux-amd64.tar.gz -o helm.tar.gz
+       ```
 
-      * For macOS use **curl** to download Helm :
+      - For macOS use **curl** to download Helm :
 
           ```
              curl -L https://get.helm.sh/helm-v3.5.0-darwin-amd64.tar.gz -o helm.tar.gz
            ``` 
+
 3.  **Extract The Downloaded File**
 
      ```
