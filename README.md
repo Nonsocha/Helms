@@ -38,13 +38,16 @@
           * For linux
 
            
-                      `` mv linux-amd64/helm /usr/local/bin/helm ``
-           
+                      ```
+                        mv linux-amd64/helm /usr/local/bin/helm 
+                      ```
     
            * For macOS:
 
            
-                       `` mv darwin-amd64/helm /usr/local/bin/helm ``
+                       ```
+                          mv darwin-amd64/helm /usr/local/bin/helm
+                       ```
            
   7. ### Verify installation
 
