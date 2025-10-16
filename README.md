@@ -12,7 +12,7 @@
    * Run Vscode as an administrator
    * Access CLI by opening the terminal
      
-        ![first](./helm-1.PNG)
+        ![first](./image/helm-1.PNG)
   
 2. ### Download Helm
    
