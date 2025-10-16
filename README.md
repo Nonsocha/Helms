@@ -75,4 +75,37 @@
         ```
           helm version
         ```
+# Step 2 : Create a New Helm Chart    
+        Now that we have helm installed in our enviroment,Lers create a new helm chart
+1. ### Create Project Directory
+       
+       ```
+         mkdir helm-web-app
+
+         cd helm-web-app
+       ```
+2. ### Create a New Chart 
+     
+     ```
+     helm create webapp
+    ```
+3. ### Initialize a git repository
+
+     ```
+        git init
+        git add .
+        git commit -m "Initial Helm webapp chart"
+    ```
+ 4. ### Push to Remote Repository
+    * Create a new repository in Github
+    * Follow the instruction provided by Git services to push your local repository to remote
+
+    ```
+       git remote add origin <REMOTE_REPOSITORY_URL>
+       git push -u origin master
+    ```     
+
+    
+       
+        
         
