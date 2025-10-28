@@ -184,6 +184,16 @@ Find the NodePort:
       kubectl get svc
   ```
   ![output](./image/app.PNG)
+###   Testing It
+
+You can test your rollback logic by deliberately breaking your Helm chart (e.g., referencing a non-existent image tag) and pushing the change.
+You’ll see:
+
+- The deployment fail
+
+- The workflow trigger an automatic rollback
+
+- The last stable version restored
 
 3. ### Initialize a git repository
 
@@ -205,3 +215,4 @@ Find the NodePort:
        
         
         
+
