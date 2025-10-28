@@ -1,21 +1,62 @@
-name: Deploy with Helm
+name: Helm CI/CD Deployment (with Rollback)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      # Step 1 - Checkout your repository
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup Helm
-        uses: aws/setup-helm@v3
+      # Step 2 - Set up Helm
+      - name: Set up Helm
+        uses: azure/setup-helm@v3
         with:
-          version: v3.14.0
+          version: 'v3.14.0'
 
-      - name: Deploy Helm chart
+      # Step 3 - Start a Minikube cluster
+      - name: Start Minikube
+        uses: medyagh/setup-minikube@latest
+        with:
+          driver: docker
+
+      # Step 4 - Verify that Kubernetes is running
+      - name: Verify cluster
+        run: kubectl get nodes
+
+      # Step 5 - Attempt Helm Deployment
+      - name: Deploy application using Helm
+        id: helm_deploy
+        continue-on-error: true
         run: |
-          helm upgrade --install mywebapp ./my-webapp
+          echo "Deploying Helm chart..."
+          helm upgrade --install mywebapp ./my-webapp \
+            --set service.type=NodePort \
+            --wait --timeout 90s
+            
+      - name: Install jq (if missing)
+        run: sudo apt-get install -y jq
+      
+
+      # Step 6 - Check if deployment succeeded
+      - name: Check Helm deployment status
+        if: steps.helm_deploy.outcome == 'failure'
+        run: |
+          echo " Helm deployment failed!"
+          echo "Initiating rollback to last stable version..."
+          REVISION=$(helm history mywebapp --output json | jq -r '.[-2].revision // empty')
+          if [ -z "$REVISION" ]; then
+            echo "No previous revision found. Skipping rollback."
+          else
+            helm rollback mywebapp $REVISION
+            echo "Rolled back to revision $REVISION successfully."
+          fi
+
+      # Step 7 - Verify services after successful deployment or rollback
+      - name: Verify running services
+        run: kubectl get svc
